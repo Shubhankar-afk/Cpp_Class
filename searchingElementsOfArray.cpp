@@ -2,8 +2,8 @@
 #include <algorithm>
 using namespace std;
 
-//Not mine
-int case_insensitive_match(string s1, string s2) {
+//Function to covert strings to lower case to make case insensitive comparison
+int comparison(string s1, string s2){
    //convert s1 and s2 into lower case strings
    transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
    transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
@@ -20,14 +20,14 @@ int main(){
 	getline(cin, check);
 	for(j=0; j<5; j++){
 		for(i=0; i<2; i++){
-			if(case_insensitive_match(check, studentData[i][j])){
+			if(comparison(check, studentData[i][j])){
 				break;
 			}
 			else{
 				continue;
 			}
 		}
-		if(case_insensitive_match(check, studentData[i][j])){
+		if(comparison(check, studentData[i][j])){
 			break;
 		}
 		if(j==4){
@@ -36,26 +36,4 @@ int main(){
 		}
 	}
 	cout<<studentData[0][j]<<" - "<<studentData[1][j]<<" - "<<studentData[2][j];
-/*	switch (i){
-		case 0:
-			cout<<studentData[0][j]<<" - "<<studentData[1][j]<<" - "<<studentData[2][j];
-		case 1:
-			cout<<studentData[0][j]<<" - "<<studentData[1][j]<<" - "<<studentData[2][j];
-	}*/
-
-/*
-	//Logic to print out all the details
-	for(j=0; j<5; j++){
-		for(i=0; i<3; i++){
-			if(i==1){
-				cout<<" - "<<studentData[i][j];
-				continue;
-			}
-			else if(i==2){
-				cout<<" - "<<studentData[i][j]<<endl;
-				break;
-			}
-			cout<<studentData[i][j];
-		}
-	}*/
 }
