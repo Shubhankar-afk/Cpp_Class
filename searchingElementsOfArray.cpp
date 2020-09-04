@@ -4,12 +4,11 @@ using namespace std;
 
 //Function to covert strings to lower case to make case insensitive comparison
 int comparison(string s1, string s2){
-   //convert s1 and s2 into lower case strings
    transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
    transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
    if(s1==s2)
-      return 1; //The strings are same
-   return 0; //not matched
+      return 1;
+   return 0;
 }
 
 int main(){
