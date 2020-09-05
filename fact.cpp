@@ -1,4 +1,4 @@
-//Dis iz bizness
+//Dis iz bizness!
 #include <iostream>
 using namespace std;
 int main(){
