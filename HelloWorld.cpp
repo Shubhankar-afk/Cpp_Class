@@ -2,10 +2,6 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int a, b, c;
-	a=10;
-	b=20;
-	c=a+b;
-	cout << c;
+	cout<<"Hello Git!"
     return 0;
 }
