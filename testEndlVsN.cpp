@@ -1,3 +1,4 @@
+//Output buffer cleared everytime endl is executed
 #include <iostream>
 using namespace std;
 int main(){
