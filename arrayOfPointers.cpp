@@ -1,10 +1,9 @@
 #include <iostream>
 using namespace std;
 int main(){
-	int a[5]={2, 3, 4, 5, 6};
-	int *p=a;
+	char* name[5]={"Winrey", "Klaus", "Marco", "Al", "Edward"};
 	for(int i=0; i<5; i++){
-		cout<<*(p+i)<<endl;
+		cout<<name[i]<<endl;
 	}
 	return 0;
 }
