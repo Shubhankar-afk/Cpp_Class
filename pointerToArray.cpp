@@ -7,8 +7,3 @@ int main(){
 		cout<<*(p+i)<<endl;
 	}
 	return 0;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> idk man
