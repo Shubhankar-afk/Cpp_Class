@@ -9,8 +9,7 @@ class FD{
 		double maturityAmt;
 		int monthsNum;
 
-		FD(double argInterest){
-			interest=argInterest;
+		FD(double interest){
 			cout<<"Fixed Deposit a/c: ";
 			cin>>fdno;
 			cin.ignore();
