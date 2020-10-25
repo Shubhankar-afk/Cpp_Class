@@ -10,43 +10,41 @@ class Time{
 		int minutes;
 		int seconds;
 
-		//Function to accept time from user and storin it in objects
-		void accept(){
-			cout<<"Hours: ";
-			cin>>hours;
-			cout<<"Minutes: ";
-			cin>>minutes;
-			cout<<"Seconds: ";
-			cin>>seconds;
-		}
-
-		//Function to display the time
-		void display(){
-			 cout<<hours<<":"<<minutes<<":"<<seconds<<endl;
-		}
-
-		//Funtion to compare times
-		void checkEquality(Time obj1, Time obj2){
-			if(obj1.hours==obj2.hours && obj1.minutes==obj2.minutes && obj1.seconds==obj2.seconds){
-				cout<<"Time 1 and Time 2 are equal.\n";
+		//Operator == overloaded to compare times
+		bool operator == (Time time){
+			if(hours==time.hours && minutes==time.minutes && seconds==time.seconds){
+				return true;
 			}
+			return false;
 		}
-		
+		//Operator overloading of insertion and extraction operator
+		ostream & operator<<(ostream &out);
+		istream & operator>>(istream &in);
 };
 
+ostream & operator<<(ostream &out, Time &time){
+	out<<time.hours<<":"<<time.minutes<<":"<<time.seconds;
+	return out;
+}
+
+istream & operator>>(istream &in, Time &time){
+	cout<<"Enter the time using the HH/MM/SS format\n";
+	in>>time.hours>>time.minutes>>time.seconds;
+	return in;
+}
+
 int main(){
-	int count=0;
-	cout<<"Enter the time using the HH/MM/SS format\n";
+
 	Time time1;
-	time1.accept();
+	cin>>time1;
 	cout<<"Time 1: ";
-	time1.display();
-	cout<<"Enter the time using the HH/MM/SS format\n";
+	cout<<time1<<endl;
 	Time time2;
-	time2.accept();
+	cin>>time2;
 	cout<<"Time 2: ";
-	time2.display();
+	cout<<time2<<endl;
 	Time time3;
-	time3.checkEquality(time1, time2);
+	if(time1==time2)
+		cout<<"Time1 = Time 2";
 	return 0;
 }
