@@ -9,10 +9,12 @@ class Time{
 		int hours;
 		int minutes;
 		int seconds;
+		int totalSeconds;
 
 		//Operator == overloaded to compare times
 		bool operator == (Time time){
-			if(hours==time.hours && minutes==time.minutes && seconds==time.seconds){
+
+			if(totalSeconds==time.totalSeconds){
 				return true;
 			}
 			return false;
@@ -24,6 +26,7 @@ class Time{
 
 ostream & operator<<(ostream &out, Time &time){
 	out<<time.hours<<":"<<time.minutes<<":"<<time.seconds;
+	time.totalSeconds = 3600*time.hours + 60*time.minutes + time.seconds;
 	return out;
 }
 
