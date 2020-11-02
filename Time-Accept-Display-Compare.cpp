@@ -20,8 +20,8 @@ class Time{
 			return false;
 		}
 		//Operator overloading of insertion and extraction operator
-		ostream & operator<<(ostream &out);
-		istream & operator>>(istream &in);
+		ostream & operator << (ostream &out);
+		istream & operator >> (istream &in);
 };
 
 ostream & operator<<(ostream &out, Time &time){
