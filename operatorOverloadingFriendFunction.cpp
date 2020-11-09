@@ -6,8 +6,8 @@ class Student{
 		string name;
 		int rollNum;
 
-		friend istream & operator >> (istream &in, Student &student);
-		friend ostream & operator << (ostream &out, Student &student);
+		friend istream & operator >> (istream &, Student &);
+		friend ostream & operator << (ostream &, Student &);
 };
 
 istream & operator >> (istream &in, Student &student){
