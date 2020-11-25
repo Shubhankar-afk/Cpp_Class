@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 class FD{
 	public:
@@ -20,15 +21,13 @@ class FD{
 			cout<<"Rate of interest: "<<interest<<endl;
 			cout<<"Number of months: ";
 			cin>>monthsNum;
-			maturityAmt=amt+((amt*interest*monthsNum)/(12*100));
+			int years = floor(monthsNum/12);
+			maturityAmt=amt*pow((1+(interest/100)), years);
 			cout<<"Maturity amount: "<<maturityAmt<<endl;
 		}
 };
 
 int main(){
-	double rate;
-	cout<<"Enter the interest rate: ";
-	cin>>rate;
-	FD fd1(rate);
+	FD fd1(10);
 	return 0;
 }
